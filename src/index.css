@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap");
 
 :root {
   /* --- Theme tokens: black / beige-white + warm gold accent --- */
@@ -11,8 +11,8 @@
   --gold-bright: #d9b65f;
   --muted: #8a8576;
 
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-body: "Inter", sans-serif;
 
   --section-pad: clamp(1.5rem, 5vw, 6rem);
 
@@ -59,7 +59,9 @@ body {
   position: relative;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-display);
   line-height: 1.05;
   letter-spacing: -0.02em;
@@ -70,7 +72,43 @@ a {
   text-decoration: none;
 }
 
-.accent { color: var(--gold); }
+/* Interests grid: 3 cols desktop, 2 cols on mobile */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 640px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Contact icon row: stays horizontal, tighter gap on mobile */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+@media (max-width: 640px) {
+  .contact-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-left: 2.25rem;
+  }
+}
+
+/* Intro text: keep clear of the right-side image on mobile */
+@media (max-width: 640px) {
+  .intro-text {
+    padding-right: 38%;
+  }
+}
+
+.accent {
+  color: var(--gold);
+}
 .eyebrow {
   font-family: var(--font-body);
   font-size: 0.8rem;

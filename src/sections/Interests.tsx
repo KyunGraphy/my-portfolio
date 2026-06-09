@@ -26,13 +26,7 @@ export default function Interests() {
         My <span className="accent">Interests</span>
       </h2>
 
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: '1.25rem',
-        }}
-      >
+      <div className="interests-grid">
         {interests.map((it) => {
           const Icon = interestIcons[it.icon]
           return (

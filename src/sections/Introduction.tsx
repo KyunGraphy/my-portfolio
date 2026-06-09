@@ -33,25 +33,43 @@ export default function Introduction() {
             'linear-gradient(to left, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 95%)',
         }}
       />
+      {/* Dark scrim so the image doesn't pull focus from the text */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          height: '100%',
+          width: '62%',
+          background:
+            'linear-gradient(to left, rgba(0,0,0,0.62), rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 95%)',
+          maskImage:
+            'linear-gradient(to left, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 95%)',
+          WebkitMaskImage:
+            'linear-gradient(to left, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 95%)',
+        }}
+      />
     </div>
   )
 
   return (
     <Section id="intro" tone="beige" background={background}>
-      <p className="eyebrow">01 — About</p>
-      <h2 style={{ fontSize: 'clamp(2rem, 6vw, 4rem)', margin: '0.5rem 0 1.5rem' }}>
-        {heading}
-      </h2>
-      <p
-        style={{
-          maxWidth: 640,
-          fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
-          lineHeight: 1.5,
-          whiteSpace: 'pre-line',
-        }}
-      >
-        {body}
-      </p>
+      <div className="intro-text">
+        <p className="eyebrow">01 — About</p>
+        <h2 style={{ fontSize: 'clamp(2rem, 6vw, 4rem)', margin: '0.5rem 0 1.5rem' }}>
+          {heading}
+        </h2>
+        <p
+          style={{
+            maxWidth: 640,
+            fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
+            lineHeight: 1.5,
+            whiteSpace: 'pre-line',
+          }}
+        >
+          {body}
+        </p>
+      </div>
     </Section>
   )
 }

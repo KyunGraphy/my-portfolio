@@ -39,7 +39,7 @@ export default function Contact() {
       }
     >
       <div style={{ maxWidth: 560 }}>
-        <p className="eyebrow">07 — Say hello</p>
+        <p className="eyebrow">07 — Contact me</p>
         <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', margin: '0.5rem 0 1.5rem' }}>
           Let&apos;s work <span className="accent">together</span>.
         </h2>
@@ -47,7 +47,7 @@ export default function Contact() {
           <p style={{ color: 'var(--muted)', marginBottom: '2rem' }}>{location}</p>
         )}
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem' }}>
+        <div className="contact-links">
           {links.map((l) => {
           const Icon = l.icon
           return (
