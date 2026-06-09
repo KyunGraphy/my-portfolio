@@ -94,6 +94,7 @@ To me, coding isn't just about syntax; it's about building tools that simplify l
     { name: "TOEIC", issuer: "ETS", year: "2023" },
     { name: "TOEIC Speaking & Writing", issuer: "ETS", year: "2023" },
     { name: "HSK Level 5", issuer: "Hanban", year: "2026" },
+    { name: "HSKK", issuer: "Hanban", year: "2026" },
   ],
 
   activities: [
@@ -101,9 +102,48 @@ To me, coding isn't just about syntax; it's about building tools that simplify l
       name: "Calculus & Physics Teaching Assistant",
       role: "Teaching Assistant",
       period: "",
+      skills: [
+        "Explaining complex concepts simply",
+        "Public speaking & presentation",
+        "Mentoring 100+ students",
+        "Patience & time management",
+      ],
     },
-    { name: "PASS Community", role: "Teaching Assistant", period: "" },
-    { name: "IU Ambassador", role: "Member", period: "" },
+    {
+      name: "PASS Community",
+      role: "Teaching Assistant",
+      period: "",
+      skills: [
+        "Peer-assisted study facilitation",
+        "Team collaboration",
+        "Session planning",
+        "Leadership",
+      ],
+    },
+    {
+      name: "IU Ambassador",
+      role: "Member",
+      period: "",
+      skills: [
+        "Event organization",
+        "Networking & communication",
+        "Cross-cultural engagement",
+        "Leadership",
+      ],
+    },
+  ],
+
+  // --- My Interests (edit freely) ---
+  interests: [
+    { name: "Linguistics", icon: "linguistics" },
+    { name: "Music", icon: "music" },
+    { name: "Journey", icon: "journey" },
+    { name: "Machine Learning", icon: "ml" },
+    { name: "Data Analyze", icon: "data" },
+    { name: "Coding", icon: "code" },
+    { name: "AWS", icon: "aws" },
+    { name: "Sport", icon: "sport" },
+    { name: "Presentation", icon: "presentation" },
   ],
 
   // --- Work Experience + Achievement ---

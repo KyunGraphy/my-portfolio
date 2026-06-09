@@ -1,5 +1,38 @@
+import type { IconType } from 'react-icons'
+import {
+  SiReact,
+  SiNextdotjs,
+  SiRedux,
+  SiTypescript,
+  SiGo,
+  SiPython,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiRedis,
+  SiTypeorm,
+} from 'react-icons/si'
+import { FaProjectDiagram } from 'react-icons/fa'
+import { TbApi } from 'react-icons/tb'
 import Section from '../components/Section'
 import { profile } from '../data/profile'
+
+// Tech skill name -> brand icon. Names match profile.ts skills items.
+const skillIcons: Record<string, IconType> = {
+  ReactJS: SiReact,
+  NextJS: SiNextdotjs,
+  'Redux Toolkit': SiRedux,
+  TypeScript: SiTypescript,
+  Golang: SiGo,
+  Microservices: FaProjectDiagram,
+  'RESTful API': TbApi,
+  Python: SiPython,
+  PostgreSQL: SiPostgresql,
+  MySQL: SiMysql,
+  MongoDB: SiMongodb,
+  Redis: SiRedis,
+  TypeORM: SiTypeorm,
+}
 
 const col: React.CSSProperties = { flex: '1 1 260px', minWidth: 260 }
 const cardLabel: React.CSSProperties = {
@@ -10,7 +43,7 @@ const cardLabel: React.CSSProperties = {
 }
 
 export default function SkillsEducation() {
-  const { skills, education, certificates, activities } = profile
+  const { skills, education, certificates } = profile
   return (
     <Section id="skills" tone="dark">
       <p className="eyebrow">02 — What I bring</p>
@@ -36,32 +69,40 @@ export default function SkillsEducation() {
                 {cat.group}
               </div>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-                {cat.items.map((s) => (
-                  <a
-                    key={s.name}
-                    href={s.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    title={`Learn about ${s.name}`}
-                    style={{
-                      border: '1px solid var(--muted)',
-                      borderRadius: 999,
-                      padding: '0.35rem 0.8rem',
-                      fontSize: '0.85rem',
-                      transition: 'border-color 0.25s ease, color 0.25s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'var(--gold)'
-                      e.currentTarget.style.color = 'var(--gold)'
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'var(--muted)'
-                      e.currentTarget.style.color = 'inherit'
-                    }}
-                  >
-                    {s.name}
-                  </a>
-                ))}
+                {cat.items.map((s) => {
+                  const Icon = skillIcons[s.name]
+                  return (
+                    <a
+                      key={s.name}
+                      href={s.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      title={`Learn about ${s.name}`}
+                      aria-label={s.name}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.45rem',
+                        border: '1px solid var(--muted)',
+                        borderRadius: 999,
+                        padding: '0.35rem 0.8rem',
+                        fontSize: '0.85rem',
+                        transition: 'border-color 0.25s ease, color 0.25s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--gold)'
+                        e.currentTarget.style.color = 'var(--gold)'
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = 'var(--muted)'
+                        e.currentTarget.style.color = 'inherit'
+                      }}
+                    >
+                      {Icon && <Icon size="1.1em" aria-hidden />}
+                      {s.name}
+                    </a>
+                  )
+                })}
               </div>
             </div>
           ))}
@@ -89,16 +130,6 @@ export default function SkillsEducation() {
               <div style={{ fontWeight: 600 }}>{c.name}</div>
               <div style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>
                 {c.issuer} · {c.year}
-              </div>
-            </div>
-          ))}
-
-          <h3 style={{ ...cardLabel, marginTop: '1.5rem' }}>Activity</h3>
-          {activities.map((a) => (
-            <div key={a.name} style={{ marginBottom: '1rem' }}>
-              <div style={{ fontWeight: 600 }}>{a.name}</div>
-              <div style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>
-                {a.role}{a.period ? ` · ${a.period}` : ''}
               </div>
             </div>
           ))}

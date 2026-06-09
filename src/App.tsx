@@ -5,6 +5,8 @@ import Introduction from './sections/Introduction'
 import SkillsEducation from './sections/SkillsEducation'
 import Experience from './sections/Experience'
 import Projects from './sections/Projects'
+import UniversityActivities from './sections/UniversityActivities'
+import Interests from './sections/Interests'
 import Contact from './sections/Contact'
 
 export default function App() {
@@ -16,6 +18,8 @@ export default function App() {
       <SkillsEducation />
       <Experience />
       <Projects />
+      <UniversityActivities />
+      <Interests />
       <Contact />
       <ScrollTopButton />
     </>

@@ -1,6 +1,6 @@
 import Section from '../components/Section'
 import { profile } from '../data/profile'
-import profileImg from '../assets/profile.jpeg'
+import profileImg from '../assets/cover.jpg'
 
 export default function Cover() {
   const { name, nickname, role, tagline } = profile.cover

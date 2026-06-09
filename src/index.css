@@ -38,7 +38,6 @@ body {
 
 /* --- Scroll-snap container: one full section per screen --- */
 #root {
-  height: 100vh;
   height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -49,7 +48,7 @@ body {
 }
 
 .section {
-  min-height: 100vh;
+  position: relative;
   min-height: 100dvh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
