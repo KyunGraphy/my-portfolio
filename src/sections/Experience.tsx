@@ -3,8 +3,24 @@ import Section from "../components/Section";
 import { profile } from "../data/profile";
 import expImg from "../assets/experience.jpeg";
 
+const MONTHS = [
+  "jan", "feb", "mar", "apr", "may", "jun",
+  "jul", "aug", "sep", "oct", "nov", "dec",
+];
+
+/** Convert a period's start ("Apr 2024 – Present") to a sortable number. */
+function periodStart(period: string): number {
+  const start = period.split("–")[0].trim().toLowerCase();
+  const [mon, year] = start.split(/\s+/);
+  const m = MONTHS.indexOf(mon.slice(0, 3));
+  return Number(year) * 12 + (m === -1 ? 0 : m);
+}
+
 export default function Experience() {
   const { experience, achievements } = profile;
+  const sortedExperience = [...experience].sort(
+    (a, b) => periodStart(b.period) - periodStart(a.period)
+  );
 
   const background = (
     <div
@@ -43,7 +59,7 @@ export default function Experience() {
       <div style={{ display: "flex", flexWrap: "wrap", gap: "3rem" }}>
         {/* Experience timeline */}
         <div style={{ flex: "2 1 420px", minWidth: 300 }}>
-          {experience.map((job) => (
+          {sortedExperience.map((job) => (
             <motion.div
               key={job.company}
               whileHover={{ scale: 1.035 }}
