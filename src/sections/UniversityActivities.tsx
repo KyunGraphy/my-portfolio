@@ -6,6 +6,7 @@ import { profile } from '../data/profile'
 import actTeaching from '../assets/act-teaching.jpg'
 import actAmbassador from '../assets/act-ambassador.jpg'
 import actPass from '../assets/act-pass.jpg'
+import activitiesBg from '../assets/interests-portrait.jpg'
 
 type Activity = (typeof profile.activities)[number]
 
@@ -29,9 +30,52 @@ export default function UniversityActivities() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  const background = (
+    <div
+      aria-hidden
+      style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}
+    >
+      {/* Blurred copy underneath — shows through on the left edge */}
+      <img
+        src={activitiesBg}
+        alt=""
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          height: '85%',
+          width: '55%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          opacity: 0.22,
+          filter: 'blur(6px)',
+        }}
+      />
+      {/* Sharp copy on top, masked so its left side fades into the blur */}
+      <img
+        src={activitiesBg}
+        alt=""
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          height: '85%',
+          width: '55%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          opacity: 0.22,
+          maskImage:
+            'linear-gradient(to left, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 90%)',
+          WebkitMaskImage:
+            'linear-gradient(to left, rgba(0,0,0,1) 45%, rgba(0,0,0,0) 90%)',
+        }}
+      />
+    </div>
+  )
+
   return (
-    <Section id="activities" tone="beige">
-      <p className="eyebrow">05 — Beyond the classroom</p>
+    <Section id="activities" tone="beige" background={background}>
+      <p className="eyebrow">06 — Beyond the classroom</p>
       <h2 style={{ fontSize: 'clamp(2rem, 6vw, 4rem)', margin: '0.5rem 0 2rem' }}>
         University <span className="accent">Activities</span>
       </h2>

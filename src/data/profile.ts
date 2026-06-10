@@ -135,15 +135,15 @@ To me, coding isn't just about syntax; it's about building tools that simplify l
 
   // --- My Interests (edit freely) ---
   interests: [
-    { name: "Linguistics", icon: "linguistics" },
-    { name: "Music", icon: "music" },
-    { name: "Journey", icon: "journey" },
-    { name: "Machine Learning", icon: "ml" },
-    { name: "Data Analyze", icon: "data" },
-    { name: "Coding", icon: "code" },
-    { name: "AWS", icon: "aws" },
-    { name: "Sport", icon: "sport" },
-    { name: "Presentation", icon: "presentation" },
+    { name: "Linguistics", icon: "linguistics", description: "" },
+    { name: "Music", icon: "music", description: "" },
+    { name: "Journey", icon: "journey", description: "" },
+    { name: "Machine Learning", icon: "ml", description: "" },
+    { name: "Data Analyze", icon: "data", description: "" },
+    { name: "Coding", icon: "code", description: "" },
+    { name: "AWS", icon: "aws", description: "" },
+    { name: "Sport", icon: "sport", description: "" },
+    { name: "Photograph", icon: "photograph", description: "" },
   ],
 
   // --- Work Experience + Achievement ---

@@ -39,7 +39,7 @@ export default function Contact() {
       }
     >
       <div style={{ maxWidth: 560 }}>
-        <p className="eyebrow">07 — Contact me</p>
+        <p className="eyebrow">08 — Contact me</p>
         <h2 style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', margin: '0.5rem 0 1.5rem' }}>
           Let&apos;s work <span className="accent">together</span>.
         </h2>

@@ -6,6 +6,7 @@ import Introduction from './sections/Introduction'
 import SkillsEducation from './sections/SkillsEducation'
 import Experience from './sections/Experience'
 import Projects from './sections/Projects'
+import CodeforceVinaResales from './sections/CodeforceVinaResales'
 import UniversityActivities from './sections/UniversityActivities'
 import Interests from './sections/Interests'
 import Contact from './sections/Contact'
@@ -50,6 +51,7 @@ export default function App() {
       <SkillsEducation />
       <Experience />
       <Projects />
+      <CodeforceVinaResales />
       <UniversityActivities />
       <Interests />
       <Contact />
