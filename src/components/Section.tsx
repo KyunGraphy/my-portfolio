@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import useMediaQuery from '../hooks/useMediaQuery'
 
 type Props = {
   id: string
@@ -21,6 +22,7 @@ const fg: Record<NonNullable<Props['tone']>, string> = {
 }
 
 export default function Section({ id, children, tone = 'dark', background }: Props) {
+  const isMobile = useMediaQuery('(max-width: 640px)')
   return (
     <section
       id={id}
@@ -29,8 +31,8 @@ export default function Section({ id, children, tone = 'dark', background }: Pro
     >
       {background}
       <motion.div
-        initial={{ opacity: 0, y: 32 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={isMobile ? false : { opacity: 0, y: 32 }}
+        whileInView={isMobile ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.4 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         style={{ width: '100%', maxWidth: 1100, margin: '0 auto', position: 'relative', zIndex: 1 }}
