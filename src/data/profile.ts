@@ -141,7 +141,7 @@ To me, coding isn't just about syntax; it's about building tools that simplify l
     { name: "Machine Learning", icon: "ml", description: "" },
     { name: "Data Analyze", icon: "data", description: "" },
     { name: "Coding", icon: "code", description: "" },
-    { name: "AWS", icon: "aws", description: "" },
+    { name: "Travelling", icon: "travelling", description: "" },
     { name: "Sport", icon: "sport", description: "" },
     { name: "Photograph", icon: "photograph", description: "" },
   ],

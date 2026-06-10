@@ -3,8 +3,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import type { IconType } from "react-icons";
 import { FiCode, FiMusic, FiCompass, FiBarChart2 } from "react-icons/fi";
-import { TbLanguage, TbBrain, TbBallFootball, TbCamera } from "react-icons/tb";
-import { FaAws } from "react-icons/fa";
+import { TbLanguage, TbBrain, TbBallFootball, TbCamera, TbPlane } from "react-icons/tb";
 import Section from "../components/Section";
 import { profile } from "../data/profile";
 import interestsImg from "../assets/interests-camera.jpg";
@@ -41,7 +40,7 @@ const interestIcons: Record<string, IconType> = {
   ml: TbBrain,
   data: FiBarChart2,
   code: FiCode,
-  aws: FaAws,
+  travelling: TbPlane,
   sport: TbBallFootball,
   photograph: TbCamera,
 };
