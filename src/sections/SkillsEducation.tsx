@@ -43,7 +43,7 @@ const cardLabel: React.CSSProperties = {
 }
 
 export default function SkillsEducation() {
-  const { skills, education, certificates } = profile
+  const { skills, education, certificates, otherCertificates } = profile
   return (
     <Section id="skills" tone="dark">
       <p className="eyebrow">02 — What I bring</p>
@@ -122,12 +122,32 @@ export default function SkillsEducation() {
           ))}
         </div>
 
-        {/* Certificates */}
+        {/* Foreign Language Certificate */}
         <div style={col}>
-          <h3 style={cardLabel}>Certificates</h3>
+          <h3 style={cardLabel}>Foreign Language Certificate</h3>
           {certificates.map((c) => (
             <div key={c.name} style={{ marginBottom: '1rem' }}>
               <div style={{ fontWeight: 600 }}>{c.name}</div>
+              <div style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>
+                {c.issuer} · {c.year}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Other Certificates */}
+        <div style={col}>
+          <h3 style={cardLabel}>Other Certificates</h3>
+          {otherCertificates.map((c) => (
+            <div key={c.name} style={{ marginBottom: '1rem' }}>
+              <a
+                href={c.url}
+                target="_blank"
+                rel="noreferrer"
+                style={{ fontWeight: 600, color: 'inherit', textDecoration: 'underline' }}
+              >
+                {c.name}
+              </a>
               <div style={{ color: 'var(--muted)', fontSize: '0.85rem' }}>
                 {c.issuer} · {c.year}
               </div>

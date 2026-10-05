@@ -97,6 +97,16 @@ To me, coding isn't just about syntax; it's about building tools that simplify l
     { name: "HSKK", issuer: "Hanban", year: "2026" },
   ],
 
+  otherCertificates: [
+    {
+      name: "2026 School of Information Engineering Summer School Program",
+      issuer:
+        "Zhongnan University of Economics and Law School of Information Engineering",
+      year: "2026",
+      url: "https://drive.google.com/file/d/18rKtCUl-rRj7RELuLJzfv4okN6cgQ-yJ/view?usp=drive_link",
+    },
+  ],
+
   activities: [
     {
       name: "Calculus & Physics Teaching Assistant",
